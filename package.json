@@ -1,5 +1,5 @@
 {
-  "name": "koa",
+  "name": "koa-test",
   "version": "1.0.0",
   "description": "koa实践",
   "main": "index.js",
