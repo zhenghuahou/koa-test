@@ -1,0 +1,22 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "koa实践",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenghuahou/koa.git"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "zhenghuahou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhenghuahou/koa/issues"
+  },
+  "homepage": "https://github.com/zhenghuahou/koa#readme"
+}
