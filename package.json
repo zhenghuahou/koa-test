@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/zhenghuahou/koa/issues"
   },
-  "homepage": "https://github.com/zhenghuahou/koa#readme"
+  "homepage": "https://github.com/zhenghuahou/koa#readme",
+  "devDependencies": {
+    "koa": "^2.0.0"
+  }
 }
