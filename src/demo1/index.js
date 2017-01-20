@@ -66,7 +66,7 @@ app.use(function *(){
 });
   // this.remove('Cache-Control');
   console.log(' 2 ---->this.get(ETag):',this.get('Etag'))
-  // this.body = '胡子qHello World!!!11';
+  this.body = '胡子qHello World!!!11';
   // this.status = 301;
   // this.redirect('/cart');
   // this.body = 'Redirecting to shopping cart';
