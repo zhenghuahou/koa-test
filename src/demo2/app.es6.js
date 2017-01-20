@@ -4,16 +4,6 @@ var Koa = require('koa');
 var send = require('koa-send');
 var app = new Koa();
 
-
- async function tt(ctx,next){
-  console.log(' next--->111:',next);
-  // next();
-  // if ('/' == ctx.path) return ctx.body = 'Try GET /package.json';
-  // await send(ctx, ctx.path, { root: __dirname });
-}
-
-tt();
-
 // console.log(' path:',path,' 11--->',path.rersolve('/foo', 'quux', '..'));
 // console.log(' path:',path,'22 --->',path.join('/foo', 'quux', '..'));
 
@@ -22,20 +12,10 @@ tt();
 // console.log(' resolvePath:',resolvePath," joinPath:",joinPath);
 // resolvePath: /Users/houzhenghua/github/koa-test/path1/path2/a/b/c  
 // joinPath: path1/path2/a/b/c/
-
-
- async function tt(ctx,next){
-  console.log(' next--->111:',next);
-  // next();
-  // if ('/' == ctx.path) return ctx.body = 'Try GET /package.json';
-  // await send(ctx, ctx.path, { root: __dirname });
-}
-
-tt();
+console.log(' --->process.env.NODE_ENV:',process.env.NODE_ENV);
 
 
 var test = arguments;
-
 
 const html = fs.readFileSync(path.join(__dirname,'./test.html'));
 // const html = 'html';
@@ -48,28 +28,33 @@ const html = fs.readFileSync(path.join(__dirname,'./test.html'));
  */
 // app.use(middleware.assstatic('.'));
 
-console.log('    ------->',23);
 
-app.use( function(ctx,next){
-  console.log(' ------+++++=====tttt:huazi');
-  next();
+app.use(async function(ctx,next){
+  console.log('   test',ctx.method);
   // if ('/' == ctx.path) return ctx.body = 'Try GET /package.json';
   // await send(ctx, ctx.path, { root: __dirname });
+  // return next();
+  next();
+  let  tt;
+   if ( tt = await send(ctx, ctx.path, { root: __dirname })) {
+      // return next();
+  }
+    console.log(' re:',tt);
+  
 });
 
 
 // response
 app.use((ctx,next)=>{
+  console.log('test2');
     //箭头函数没有自己的arguments,这里面引用的的arguments是外面一层函数的arguments
     //所以 test ===arguments 为true
     // console.log(' arguments:',arguments,test === arguments);
-
     ctx.type='text/html';
     // ctx.type='html';//ok
     ctx.body = html;
     // ctx.throw('error','错误提示')
     // console.log(' ctx:',ctx,' next:',next);
-
     next(); //执行下一个中间件(--2)
 });
 

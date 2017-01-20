@@ -1,13 +1,10 @@
 {
   "presets": [ 
         ["latest", {"loose": true, "modules": "commonjs"}],
-        "stage-0" 
     ],
   "plugins": [
+        //https://github.com/babel/babelify/issues/28
         // http://babeljs.io/docs/plugins/transform-runtime/
-        ["transform-runtime", {
-            //"polyfill": true,
-            "regenerator": true
-        }]
+        ["transform-runtime"]
     ],
 }
