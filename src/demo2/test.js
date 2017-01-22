@@ -1,3 +1,32 @@
+// if ( CSS.supports( '(display: flex)' ) ) {
+//     console.log( '支持flex' )
+// } else {
+//     console.log( '不支持flex' )
+// }
+// if ( CSS.supports( '(display: flexbox)' ) ) {
+//     console.log( '支持flexbox' )
+// } else {
+//     console.log( '不支持flexbox' )
+// }
+
+
+function random(min = 0,max = min +1){
+                return  toHex(Math.round(Math.random()*(max-min))+ min>>0) //[0,255]包括0，255
+            }
+function toHex(number = 0){
+    return number.toString(16)
+}
+var dom = document.querySelector('.test');
+document.querySelector('.btn').addEventListener('click',function(){
+    dom.style.setProperty('--theme-colour', `#${random(0,255)}${random(0,255)}${random(0,255)}`);
+},false);
+
+
+
+
+
+
+
 const matchRules = {
   'area1':/[^\d.]/g, //楼层取反用
   'area2':/^0+/,  //楼层取反用
